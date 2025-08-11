@@ -26,8 +26,8 @@ Creating artificial flowers from EVA foam is a fun and rewarding hobby that allo
 
 ## Images
 
-![EVA Flower 1](/assets/images/eva-flowers/flower1.jpg)
+![EVA Flower 1](/proflo/assets/images/eva-flowers/flower1.jpg)
 
-![EVA Flower 2](/assets/images/eva-flowers/flower2.jpg)
+![EVA Flower 2](/proflo/assets/images/eva-flowers/flower2.jpg)
 
-![EVA Flower 3](/assets/images/eva-flowers/flower3.jpg)
+![EVA Flower 3](/proflo/assets/images/eva-flowers/flower3.jpg)
