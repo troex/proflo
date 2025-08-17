@@ -1,0 +1,24 @@
+{% if page.gallery %}
+  <div class="gallery">
+    <h2>Gallery inner</h2>
+    {% for photo in page.gallery %}
+      <img src="{{ photo.url }}" alt="{{ photo.alt }}" />
+    {% endfor %}
+  </div>
+{% else %}
+  {% assign project_gallery_path = page.path | replace: 'index.markdown', 'photos/' %}
+  {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains project_gallery_path" %}
+
+  {% if gallery_files.size > 0 %}
+    <div class="gallery">
+      <h2>Gallery</h2>
+      {% for file in gallery_files %}
+        <div class="gallery-item">
+          <img src="{{ file.path | relative_url }}" alt="Gallery image for {{ page.title }}">
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No photos found for this project.</p>
+  {% endif %}
+{% endif %}

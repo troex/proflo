@@ -51,8 +51,22 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - SUMMARY.md
+  - INSTRUCTIONS.md
+# include:
+#   - "_projects"
 
 # Collections
 collections:
   projects:
     output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: "projects/*/photos"
+    values:
+      image: true

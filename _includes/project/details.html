@@ -1,0 +1,10 @@
+<h2>Project Details</h2>
+<p><strong>Status:</strong> {{ page.status }}</p>
+<p><strong>Demo:</strong> <a href="{{ page.demo_link }}">{{ page.demo_link }}</a></p>
+
+<h3 class="title">Technologies Used</h3>
+<ul>
+  {% for tech in page.technologies %}
+    <li>{{ tech }}</li>
+  {% endfor %}
+</ul>
