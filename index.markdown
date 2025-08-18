@@ -15,3 +15,10 @@ layout: home
 </ul>
 
 <p class="rss-subscribe">... <a href="{{ "/projects/" | relative_url }}">see all projects</a></p>
+
+<pre>
+{% for file in site.static_files %}
+  {{ file.path }}
+{% endfor %}
+
+</pre>

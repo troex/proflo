@@ -3,11 +3,11 @@ layout: project
 title: "Artificial Flowers from EVA Foam"
 date:   2025-08-11 19:25:00 +0000
 gallery:
-  - url: "./photos/flower1.jpg"
+  - url: "flower1.jpg"
     alt: "EVA Flower 1"
-  - url: "./photos/flower2.jpg"
+  - url: "flower2.jpg"
     alt: "EVA Flower 2"
-  - url: "./photos/flower3.jpg"
+  - url: "flower3.jpg"
     alt: "EVA Flower 3"
 ---
 

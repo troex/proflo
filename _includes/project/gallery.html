@@ -1,12 +1,13 @@
+{% assign project_name = page.path | split: '/' | last | replace: '.markdown', '' %}
 {% if page.gallery %}
   <div class="gallery">
     <h2>Gallery inner</h2>
     {% for photo in page.gallery %}
-      <img src="{{ photo.url }}" alt="{{ photo.alt }}" />
+      <img src="{{ photo.url | prepend: '/' | prepend: project_name | prepend: '/assets/photos/' | relative_url }}" alt="{{ photo.alt }}" />
     {% endfor %}
   </div>
 {% else %}
-  {% assign project_gallery_path = page.path | replace: 'index.markdown', 'photos/' %}
+  {% assign project_gallery_path = '/assets/photos/' | append: project_name %}
   {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains project_gallery_path" %}
 
   {% if gallery_files.size > 0 %}
