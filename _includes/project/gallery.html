@@ -11,15 +11,52 @@
   {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains project_gallery_path" %}
 
   {% if gallery_files.size > 0 %}
-    <div class="gallery">
-      <h2>Gallery</h2>
-      {% for file in gallery_files %}
-        <div class="gallery-item">
-          <img src="{{ file.path | relative_url }}" alt="Gallery image for {{ page.title }}">
+    <h2>Gallery Swipper</h2>
+
+    <div class="swiper-container">
+      <div class="swiper mySwiper-image" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">
+        <div class="swiper-wrapper">
+        {% for file in gallery_files %}
+          <div class="swiper-slide">
+            <img src="{{ file.path | relative_url }}" alt="Gallery image for {{ page.title }}">
+          </div>
+        {% endfor %}
         </div>
-      {% endfor %}
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div thumbsSlider="" class="swiper mySwiper-thumbs">
+        <div class="swiper-wrapper">
+        {% for file in gallery_files %}
+          <div class="swiper-slide">
+            <img src="{{ file.path | relative_url }}" alt="Gallery image for {{ page.title }}">
+          </div>
+        {% endfor %}
+        </div>
+      </div>
     </div>
   {% else %}
     <p>No photos found for this project.</p>
   {% endif %}
 {% endif %}
+
+  <script>
+    var swiper = new Swiper(".mySwiper-thumbs", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper-image", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+  </script>
